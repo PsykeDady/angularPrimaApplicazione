@@ -1,0 +1,2 @@
+<!-- <p [ngStyle]='resultColor()'>Server con id {{serverID}} risulta {{serverStatus}}</p> -->
+<p class="result" [ngClass]='{offline:serverStatus==="offline",online:serverStatus==="online"}'>Server con id {{serverID}} risulta {{serverStatus}}</p>
