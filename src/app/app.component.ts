@@ -18,12 +18,13 @@ export class AppComponent {
   servers=[];
   
   constructor(){
-    setTimeout(() => {
-      this.allowNewServer=true;
-    },2000)
+    // setTimeout(() => {
+    //   this.allowNewServer=true;
+    // },2000)
   }
 
   onCreateServer(){
+    this.allowNewServer=false;
     this.serverCreateStatus=`server was created and the name is ${this.entire}`;
     this.servers.push(this.entire)
     setTimeout(()=>{this.resetServerCreate()},1000)
@@ -34,6 +35,7 @@ export class AppComponent {
     resetEventBinding= resetEventBinding==undefined ? true : resetEventBinding;
     this.entire=""; 
     this.serverCreateStatus="";
+    this.allowNewServer=false;
     if (resetEventBinding) (document.getElementById("eventbinding") as HTMLInputElement).value='';
   }
 
@@ -48,6 +50,7 @@ export class AppComponent {
 
     this.lastPressed=ievent.data;
     this.entire=hielement.value;
+    this.allowNewServer=this.entire!="";
   }
   colorWait(){
     if(this.serverCreateStatus!=="") return "green";
