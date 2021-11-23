@@ -4,7 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BasicHighlightDirective } from './BasicHighlight/basic-highlight.directive';
+import { LogButton } from './button-log.component';
 import { MioComponente } from './mio.componente';
+import { LoggingService } from './services/logging.service';
 import { DirettivaStrutturale } from './Strutturale/strutturale.directive';
 
   @NgModule({
@@ -12,12 +14,13 @@ import { DirettivaStrutturale } from './Strutturale/strutturale.directive';
 	  AppComponent,
 	  MioComponente,
 	  BasicHighlightDirective,
-	  DirettivaStrutturale
+	  DirettivaStrutturale,
+	  LogButton
 	],
 	imports: [
 	  BrowserModule, FormsModule
 	],
-	providers: [],
+	providers: [LoggingService],
 	bootstrap: [AppComponent]
   })
   export class AppModule { }
