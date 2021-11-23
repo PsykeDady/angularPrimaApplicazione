@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'CIAOAMIKI',
   templateUrl: './app.component.html',
@@ -14,6 +15,8 @@ export class AppComponent {
   
   allowNewServer:boolean=false;
   serverCreateStatus:string=""
+
+  valore=-1;
 
   servers=[];
   

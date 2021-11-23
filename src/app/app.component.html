@@ -32,3 +32,27 @@
 
 <miocomponente *ngFor="let server of servers"></miocomponente>
 <p *ngFor="let server of servers; let indice = index ">{{indice}}|{{server}}</p>
+
+<p appBasicHighlight>
+	Test basic highlight
+</p>
+
+<!-- <ng-template strutturale [mostra]="true" >
+	<p>Direttiva Strutturale</p>
+</ng-template> -->
+
+<!-- <ng-template strutturale [strutturale]="true" >
+	<p>Direttiva Strutturale</p>
+</ng-template>  -->
+
+<p *strutturale="true">
+	Direttiva Strutturale
+</p>
+
+<input type="text" [(ngModel)]="valore" id="inpValore" name="inpValore">
+<div [ngSwitch]="valore">
+	<p *ngSwitchCase="10">valore=10</p>
+	<p *ngSwitchCase="100">valore=100</p>
+	<p *ngSwitchCase="1000">valore=1000</p>
+	<p *ngSwitchDefault>Non valido</p>
+</div>
