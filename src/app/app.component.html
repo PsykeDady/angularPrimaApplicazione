@@ -58,3 +58,29 @@
 </div>
 
 <app-button-log></app-button-log>
+<hr>
+<div>
+	<h1>Test delle pipe:</h1>
+	<p>{{title | titlecase}}</p>
+	<p>{{title | titlecase}}</p>
+	<p>data di oggi: {{dataOggi | date:'yyyy/MM/dd, HH:mm':'+0002'}} </p>
+	<p>Soldi: {{soldi |currency:"EUR"}} </p>
+	<p>Decimal: {{decimale | number:'3.2-3' }} </p>
+	<p>percentuale: {{1/soldi | percent }} </p>
+	<p><strong>RACCONTO:</strong> {{testoLungo | uppercase | slice:10:25}}</p>
+	<p><strong>RACCONTO con testolungo:</strong> {{testoLungo | testolungo:15:10}}</p>
+	<p><strong>RACCONTO puntato:</strong> {{testoLungo | testolungo}}</p>
+	<p><strong>titolo puntato:</strong> {{title | testolungo : title.length-2 : 1}}</p>
+
+	<hr>
+	<hr>
+
+	<label for="search">SEARCIIII</label>
+	<input type="text" id="search" [(ngModel)]="filtro"> 
+	<p></p>
+	
+	<div>
+		<p *ngFor="let i of values | filtra:filtro"> {{i}}</p>
+	</div>
+
+</div>

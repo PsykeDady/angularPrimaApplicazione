@@ -9,9 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'primoprogetto';
+  dataOggi: Date = new Date();
   name = 'Testo d\'esempio';
   lastPressed:string="";
   entire:string="";
+  soldi:number=123
+  decimale:number=Math.PI
+  testoLungo:string="Nel mezzo dell'esecuzione di mia vita, mi ritrovai per una classe oscura, che lo retto flusso era smarrito"
   
   allowNewServer:boolean=false;
   serverCreateStatus:string=""
@@ -19,6 +23,9 @@ export class AppComponent {
   valore=-1;
 
   servers=[];
+
+  values=["ciao","come","stai","davide","emanuele","giancarlo"];
+  filtro=""
   
   constructor(){
     // setTimeout(() => {
