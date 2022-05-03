@@ -26,6 +26,10 @@ export class AppComponent {
 
   values=["ciao","come","stai","davide","emanuele","giancarlo"];
   filtro=""
+
+  promise:Promise<string> = new Promise ((resolve,reject)=> {
+	setTimeout( () => {resolve("son passati 3 secondi")},3000)
+  })
   
   constructor(){
     // setTimeout(() => {
@@ -65,6 +69,19 @@ export class AppComponent {
   colorWait(){
     if(this.serverCreateStatus!=="") return "green";
     return this.entire==="" ?  "red" : "darkgoldenrod";
+  }
+
+  addValue(){
+	const acode:number = "a".charCodeAt(0)
+	const Acode:number = "A".charCodeAt(0)
+	let randomName:string="";
+	for(let i=0; i<8; i++){
+		let numero: number = Math.floor( Math.random()*26);
+		let maiuscola:boolean = Math.random()>0.5;
+		let lettera:string = String.fromCharCode((maiuscola?Acode:acode)+numero)
+		randomName+=lettera
+	}
+	this.values.push(randomName)
   }
 }
 

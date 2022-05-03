@@ -75,12 +75,29 @@
 	<hr>
 	<hr>
 
-	<label for="search">SEARCIIII</label>
+	<button (click)="addValue()">
+		add value
+	</button>
+	<br>
+	<br>
+	<label for="search">SEARCH</label>
 	<input type="text" id="search" [(ngModel)]="filtro"> 
-	<p></p>
+	<br>
+	<br>
 	
 	<div>
-		<p *ngFor="let i of values | filtra:filtro"> {{i}}</p>
+		<p *ngFor="let i of values | filtra:filtro"> 
+			{{i}}
+		</p>
+	</div>
+	<br>
+	<br>
+
+	<div>
+		<h1>Test asincrono</h1>
+		
+		<p>{{promise|async}}</p>
+
 	</div>
 
 </div>
